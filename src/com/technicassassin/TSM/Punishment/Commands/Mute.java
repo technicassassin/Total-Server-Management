@@ -10,7 +10,7 @@ import com.technicassassin.TSM.TSM;
 import com.technicassassin.TSM.TSMCommand;
 import com.technicassassin.TSM.TSMPlayer;
 import com.technicassassin.TSM.Data.ConfigHandler;
-import com.technicassassin.TSM.tasks.AddOfflinePlayerRecord;
+import com.technicassassin.Tasks.AddOfflinePlayerRecord;
 
 public class Mute extends TSMCommand{
 	

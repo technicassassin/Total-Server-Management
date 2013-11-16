@@ -10,7 +10,7 @@ import com.technicassassin.TSM.Analytics.SQLHandlerAnalytics;
 import com.technicassassin.TSM.Assist.SQLHandlerAssist;
 import com.technicassassin.TSM.Data.Table;
 import com.technicassassin.TSM.Punishment.SQLHandlerPunish;
-import com.technicassassin.TSM.tasks.LoadOfflinePlayerData;
+import com.technicassassin.Tasks.LoadOfflinePlayerData;
 
 public class TSMPlayer {
 	

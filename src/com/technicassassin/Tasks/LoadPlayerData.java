@@ -1,4 +1,4 @@
-package com.technicassassin.TSM.tasks;
+package com.technicassassin.Tasks;
 
 import com.technicassassin.TSM.TSM;
 import com.technicassassin.TSM.TSMPlayer;

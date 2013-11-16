@@ -6,7 +6,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import com.technicassassin.TSM.TSM;
 import com.technicassassin.TSM.TSMPlayer;
 import com.technicassassin.TSM.TSMStaff;
-import com.technicassassin.TSM.tasks.LoadPlayerData;
+import com.technicassassin.Tasks.LoadPlayerData;
 
 public class LoginListener implements Listener{
 	

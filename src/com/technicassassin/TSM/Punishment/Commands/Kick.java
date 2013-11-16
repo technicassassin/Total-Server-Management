@@ -9,7 +9,7 @@ import org.bukkit.scheduler.BukkitTask;
 import com.technicassassin.TSM.TSM;
 import com.technicassassin.TSM.TSMCommand;
 import com.technicassassin.TSM.Data.ConfigHandler;
-import com.technicassassin.TSM.tasks.AddKickRecord;
+import com.technicassassin.Tasks.AddKickRecord;
 
 public class Kick extends TSMCommand{
 	
