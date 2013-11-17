@@ -13,11 +13,8 @@ import com.technicassassin.TSM.Util;
 
 public class Affect extends TSMCommand{
 	
-	TSM plugin;
-	
-	public Affect(TSM pl){
-		
-		plugin = pl;
+	public Affect(TSM pl) {
+		super(pl);
 	}
 	
 	Util util = new Util();

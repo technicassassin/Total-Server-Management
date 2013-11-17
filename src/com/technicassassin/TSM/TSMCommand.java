@@ -2,6 +2,13 @@ package com.technicassassin.TSM;
 
 public class TSMCommand {
 	
+	public TSM plugin;
+	
+	public TSMCommand(TSM pl){
+		
+		plugin = pl;
+	}
+	
 	/* 
 	 * This splits the reason from the rest of the arguments
 	 * in the command.

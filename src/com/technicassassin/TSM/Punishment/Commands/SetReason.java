@@ -6,9 +6,9 @@ import org.bukkit.command.CommandSender;
 import com.technicassassin.TSM.TSM;
 import com.technicassassin.TSM.TSMCommand;
 
-public class Fine extends TSMCommand{
-	
-	public Fine(TSM pl) {
+public class SetReason extends TSMCommand{
+
+	public SetReason(TSM pl) {
 		super(pl);
 	}
 

@@ -1,6 +1,5 @@
 package com.technicassassin.TSM.Punishment;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,12 +14,14 @@ import com.technicassassin.TSM.Punishment.Commands.Jail;
 import com.technicassassin.TSM.Punishment.Commands.Kick;
 import com.technicassassin.TSM.Punishment.Commands.Maze;
 import com.technicassassin.TSM.Punishment.Commands.Mute;
+import com.technicassassin.TSM.Punishment.Commands.SetReason;
 import com.technicassassin.TSM.Punishment.Commands.TempBan;
 import com.technicassassin.TSM.Punishment.Commands.Warn;
 import com.technicassassin.Tasks.RemoveRecord;
 
 public class CommandListener implements CommandExecutor{
 
+	@SuppressWarnings("unused")
 	private TSM plugin;
 	
 	private Mute mute;
@@ -32,6 +33,7 @@ public class CommandListener implements CommandExecutor{
 	private Ban ban;
 	private Warn warn;
 	private Affect affect;
+	private SetReason setreason;
 	 
 	public CommandListener(TSM plugin) {
 		this.plugin = plugin;
@@ -45,7 +47,9 @@ public class CommandListener implements CommandExecutor{
 		
 		switch(args[0].toUpperCase()){
 		
-		//Punishments:
+		/*
+		* Punishments:
+		*/
 		
 		case "MUTE":
 			mute.onCommand(sender, cmd, label, args);
@@ -118,6 +122,10 @@ public class CommandListener implements CommandExecutor{
 					sender.sendMessage("Usage: /record erase [RecordID]");
 				}
 				return true;
+				
+			case "SETREASON":
+				setreason.onCommand(sender, cmd, label, args);
+				
 			}
 		}
 		return true;

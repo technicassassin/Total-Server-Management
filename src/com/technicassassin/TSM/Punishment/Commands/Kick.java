@@ -13,11 +13,8 @@ import com.technicassassin.Tasks.AddKickRecord;
 
 public class Kick extends TSMCommand{
 	
-	private TSM plugin;
-	
-	public Kick(TSM plugin){
-		
-		this.plugin = plugin;
+	public Kick(TSM pl) {
+		super(pl);
 	}
 	
 	public void onCommand(CommandSender sender, Command cmd, String label, String[] args){
