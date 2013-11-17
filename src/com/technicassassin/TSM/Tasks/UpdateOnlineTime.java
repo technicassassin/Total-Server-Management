@@ -1,4 +1,4 @@
-package com.technicassassin.Tasks;
+package com.technicassassin.TSM.Tasks;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

@@ -10,8 +10,8 @@ import com.technicassassin.TSM.Assist.Assist;
 import com.technicassassin.TSM.Data.ConfigHandler;
 import com.technicassassin.TSM.Data.MainSQLHandler;
 import com.technicassassin.TSM.Punishment.Punishment;
-import com.technicassassin.Tasks.PunishmentTracker;
-import com.technicassassin.Tasks.UpdateOnlineTime;
+import com.technicassassin.TSM.Tasks.PunishmentTracker;
+import com.technicassassin.TSM.Tasks.UpdateOnlineTime;
 
 public final class TSM extends JavaPlugin {
 	

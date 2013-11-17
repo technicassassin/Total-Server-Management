@@ -10,6 +10,7 @@ import org.bukkit.potion.PotionEffectType;
 import com.technicassassin.TSM.TSM;
 import com.technicassassin.TSM.TSMCommand;
 import com.technicassassin.TSM.Util;
+import com.technicassassin.TSM.Tasks.RecordPunishment;
 
 public class Affect extends TSMCommand{
 	
@@ -76,7 +77,7 @@ public class Affect extends TSMCommand{
 		if(effect == null){
 			
 			sender.sendMessage("Adding effect failed.");
-			sender.sendMessage("Usage: /affect [target] [effect type] [length(minutes)]");
+			sender.sendMessage("Usage: /affect [target] [effect type] [length(minutes)] (reason)");
 			sender.sendMessage("Effects you can apply:(SLOWNESS,SLOWDIG,BLINDNESS,CONFUSION)");
 			return;
 			
@@ -88,6 +89,17 @@ public class Affect extends TSMCommand{
 			target.sendMessage("Effect: " + PotionEffectType.SLOW.toString() + ", was added to you for: "
 					+ args[2] + " minutes, by staff member: " + sender.getName());
 			
+			new RecordPunishment
+			(
+					target.getName(),
+					"affect " + effect.toString(),
+					util.ticksToMinutes(length),
+					getReason(3,args),
+					0,
+					sender.getName(),
+					plugin.util.getTimeStamp()
+					
+			).runTaskAsynchronously(plugin);
 			
 		} else {
 			

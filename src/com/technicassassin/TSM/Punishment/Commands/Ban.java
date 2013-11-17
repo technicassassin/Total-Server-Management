@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import com.technicassassin.TSM.TSM;
 import com.technicassassin.TSM.TSMCommand;
-import com.technicassassin.Tasks.AddOfflinePlayerRecord;
+import com.technicassassin.TSM.Tasks.RecordPunishment;
 
 public class Ban extends TSMCommand{
 
@@ -17,6 +17,8 @@ public class Ban extends TSMCommand{
 
 	public void onCommand(CommandSender sender, Command cmd, String label, String[] args){
 			
+		@SuppressWarnings("unused")
+		boolean reasonset = false;
 		Player offender = Bukkit.getServer().getPlayer(args[0]);
 		
 		/*
@@ -41,21 +43,31 @@ public class Ban extends TSMCommand{
 				
 				offender.kickPlayer("You have been banned from the server by " + 
 						sender.getName() + " for " + getReason(1,args));
+				
+				reasonset = true;
 			}
 			
 
 		}
 		
-		new AddOfflinePlayerRecord
+		new RecordPunishment
 		(
-				plugin,
-				args[0],
+				offender.getName(),
+				"ban",
 				-1,
-				(Player)sender,
-				"punish",
-				getReason(1,args)
+				getReason(1,args),
+				0,
+				sender.getName(),
+				plugin.util.getTimeStamp()
 				
 		).runTaskAsynchronously(plugin);
+		
+		/*
+		 * TODO:
+		 * If staff member has not set a reason
+		 * create a task which reminds them to
+		 * set one
+		 */
 		
 		sender.sendMessage(args[0] + " banned.");
 	}

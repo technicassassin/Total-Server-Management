@@ -4,13 +4,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitTask;
 
 import com.technicassassin.TSM.TSM;
 import com.technicassassin.TSM.TSMCommand;
-import com.technicassassin.TSM.TSMPlayer;
 import com.technicassassin.TSM.Data.ConfigHandler;
-import com.technicassassin.Tasks.AddOfflinePlayerRecord;
+import com.technicassassin.TSM.Tasks.RecordPunishment;
 
 public class Mute extends TSMCommand{
 	
@@ -47,16 +45,17 @@ public class Mute extends TSMCommand{
 			
 			sender.sendMessage("Player not online, attempting to  mute offline player...");
 			
-			BukkitTask task = new AddOfflinePlayerRecord
-				(
-						plugin, 
-						args[0],
-						Integer.parseInt(args[2]),
-						(Player)sender, 
-						"mute",
-						reason
-						
-				).runTaskAsynchronously(plugin);
+			new RecordPunishment
+			(
+					p.getName(),
+					"mute",
+					Integer.parseInt(args[1]),
+					getReason(2,args),
+					0,
+					sender.getName(),
+					plugin.util.getTimeStamp()
+					
+			).runTaskAsynchronously(plugin);
 			
 			return;
 		}

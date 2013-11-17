@@ -42,7 +42,7 @@ public class SQLHandlerPunish extends MainSQLHandler {
 	}
 	
 	/*
-	 * Grabs all the data about a player from the Assist table
+	 * Grabs all the data about a player from the Punish table
 	 * and returns it in a form that can be sent to the requestor.
 	 */
 	
@@ -119,9 +119,9 @@ public class SQLHandlerPunish extends MainSQLHandler {
 		}
 		
 		/*
-		 * NEED TO CHECK IF OFFENDER 
-		 * HAS LOGGED ONTO THE SERVER
-		 * IN THE LAST SIX MONTHS
+		 * TODO:	NEED TO CHECK IF OFFENDER 
+		 * 			HAS LOGGED ONTO THE SERVER
+		 * 			IN THE LAST SIX MONTHS
 		 */
 		
 		try{
@@ -184,4 +184,43 @@ public class SQLHandlerPunish extends MainSQLHandler {
 	}
 	
 
+	public boolean recordPunishment
+	(
+			String offender, 
+			String punishment, 
+			int length, 
+			String description,
+			int timeserved,
+			String enforcer,
+			String timestamp
+	)
+	{
+		
+		if(!checkConnection()){
+			pl.getLogger().severe("----------------------------------------------------------");
+			pl.getLogger().severe("---------------         SQL  ERROR         ---------------");
+			pl.getLogger().severe("----------------------------------------------------------");
+			return false;
+		}
+		
+		try {
+			
+			con.prepareStatement
+					(
+							"INSERT INTO " + tablename + " (offender, punishment, length, " +
+							"description, timeserved, enforcer, timestamp) VALUES (" + offender
+							+ ", " + punishment + ", " + length + ", " + description + ", " +
+							timeserved + ", " + enforcer + ", " + timestamp + ");"
+					).execute();
+			
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			return false;
+		}
+		
+		return true;
+	}
 }

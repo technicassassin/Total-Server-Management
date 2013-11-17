@@ -17,7 +17,7 @@ import com.technicassassin.TSM.Punishment.Commands.Mute;
 import com.technicassassin.TSM.Punishment.Commands.SetReason;
 import com.technicassassin.TSM.Punishment.Commands.TempBan;
 import com.technicassassin.TSM.Punishment.Commands.Warn;
-import com.technicassassin.Tasks.RemoveRecord;
+import com.technicassassin.TSM.Tasks.RemoveRecord;
 
 public class CommandListener implements CommandExecutor{
 
